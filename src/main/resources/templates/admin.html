@@ -146,7 +146,7 @@
 <!--Edit Modal Form-->
 
 <div class="modal fade" id="editModalPage" tabindex="-1" role="dialog" aria-labelledby="editModalPage" aria-hidden="true">
-    <form class="form-horizontal" th:action="@{/update}" method="put" >
+    <form  th:method="put" class="form-horizontal" th:action="@{/update}">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -193,7 +193,7 @@
 <!-- Delete Modal Form-->
 
 <div class="modal fade" id="deleteModalPage" tabindex="-1" role="dialog" aria-labelledby="deleteModalPage" aria-hidden="true">
-    <form class="form-horizontal" th:action="@{/delete}" method="put" >
+    <form class="form-horizontal" th:action="@{/delete}" th:method="Delete" >
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

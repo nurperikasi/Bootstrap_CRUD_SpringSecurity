@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("/")
 public class UserController {
 
     private final RoleDao roleDao;
@@ -62,13 +61,13 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping("/getUser/{id}")
+    @GetMapping("/getUser/{id}")
     @ResponseBody
     public Optional<User> updatePage(@PathVariable("id") int id){
         return Optional.ofNullable(userService.getById(id));
     }
 
-   @RequestMapping(value = "/update", method = {RequestMethod.PUT, RequestMethod.GET, RequestMethod.POST} )
+    @PutMapping("/update")
     public  ModelAndView updateUser(@ModelAttribute("user") User user){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("redirect:/admin");
@@ -85,8 +84,7 @@ public class UserController {
         return modelAndView;
     }
 
-
-    @RequestMapping(value = "/delete", method = {RequestMethod.PUT, RequestMethod.GET, RequestMethod.POST} )
+    @DeleteMapping("/delete")
     public ModelAndView deleteUser(@ModelAttribute("user") User user){
         ModelAndView modelAndView = new ModelAndView();
         userService.delete(user);

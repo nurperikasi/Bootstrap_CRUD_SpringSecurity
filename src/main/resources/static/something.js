@@ -8,7 +8,7 @@ $( document ).ready(function() {
 
         event.preventDefault();
 
-        var href=$(this).attr('href');
+        let href=$(this).attr('href');
 
         $.get(href,function(user, roles){
             $('#editId').val(user.id)
@@ -16,13 +16,6 @@ $( document ).ready(function() {
             $('#editLastName').val(user.lastName)
             $('#editPassword').val(user.password)
 
-            $('form' ).submit(function() {
-                let roles = [];
-
-                $('input:checked[name=roles[]]').each(function () {
-                    roles.put($(this).val());
-                });
-            });
             $('#editRoles').val(roles)
         });
 
